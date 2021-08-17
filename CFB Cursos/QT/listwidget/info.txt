@@ -1,0 +1,2 @@
+como posicionar o cursor do mouse em um widget.
+como limpar o conteudo de um editor de texto.

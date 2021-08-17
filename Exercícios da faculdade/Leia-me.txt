@@ -1,0 +1,2 @@
+Esta pasta contém programas criados durante as aulas de Sistemas computacionais,
+do curso de engenharia elétrica.

@@ -1,0 +1,3 @@
+Esta pasta contém programas criados durante o curso do canal do youtube, CFB Cursos.
+Para executar os arquivos no QT Creator, lembre de que os arquivos devem estar em pastas
+nomeadas sem caracteres especiais e sem espaço.
