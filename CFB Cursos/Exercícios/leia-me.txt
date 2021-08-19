@@ -1,0 +1,2 @@
+alguns exercícios em C++
+usando o Visual Studio Code: https://www.youtube.com/watch?v=WHyxv69ZAf0&ab_channel=ProgramandooFuturo
