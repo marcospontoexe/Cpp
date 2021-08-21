@@ -2,9 +2,14 @@
 
 using namespace std;
 
+
+
 int main(void)
 {
     int numero = 0;
+    char continuar;
+    aqui:       //declaração da label d comando goto. Não funciona globalmente, apenas na função local.
+
     cout << "Digite um numero entre 0 e 9: ";
     cin >> numero;
 
@@ -19,6 +24,18 @@ int main(void)
     else
     {
         cout << "Voce digitou cinco!";
+    }
+
+    cout << "\nDeseja continuar [S/N]: ";
+    cin >> continuar;
+
+    if(continuar == 'S' or continuar == 's')
+    {
+        goto aqui;
+    }
+    else
+    {
+        cout << "Programa encerrado! ";
     }
 
     return 0;
