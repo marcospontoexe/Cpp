@@ -17,6 +17,8 @@ int main(void)
     double angulo = 21.235879;
     bool vivo = true;
 
+   
+
     cout << pi;
     mensagem;
     cout << "\nIdade: "<< idade << "\n" << "Ano: " << ano << "\nLetra: " << letra << "\nSexo: " << sexo <<"\nNome: " <<nome << "\n" <<"Peso: " << peso << "\n" << "angulo: " << angulo << "\n" << "vivo?: " << vivo << "\n"; 
