@@ -12,14 +12,14 @@ int main()
     list <int>::iterator itt;       //declaração de um iterator, para poder manipular os índices do meio da lista
     itt = cpf.begin();          //inicia o iterator
 
-    cout << "CPF: ";
+    //cout << "CPF: ";
     for (int i = 1; i <= 12; i++)
     {        
         advance(itt, i-1);        //avança a quantidade de indices desejados (i-1)
         cpf.insert(itt, i);          //insere o valor desejado (i) na posição do iterator
         //cout << cpf(i);
     }
-    cout << "\n";
+    //cout << "\n";
 
     for (int i = 0; i < 10; i++)
     {
