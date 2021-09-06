@@ -15,19 +15,17 @@ int main()
 
     string nome="", genero="";                    
     int idade=0;
-    float peso=0;
-    
-    //declaração de objetos
-    dados *cliente = new dados(nome, genero, idade, peso);     //como o construtor tem dados de entrada, é preciso passar os dados no momento de criação de um objeto          
-  
+    float peso=0;  
 
-    cout << "Nome: ";     cin >> nome;
+    cout << "Nome: ";       cin >> nome;
     cout << "Genero: ";     cin >> genero;
-    cout << "Idade: ";     cin >> idade;
-    cout << "Peso: ";     cin >> peso;
+    cout << "Idade: ";      cin >> idade;
+    cout << "Peso: ";       cin >> peso;
 
+    //declaração de objetos
+    cadastrar *cliente = new cadastrar(nome, genero, idade, peso);     //como o construtor tem dados de entrada, é preciso passar os dados no momento de criação de um objeto   
 
-    cliente->cadastrar(nome, genero, idade, peso);
+ 
 
     cout << "\nNome: " << cliente->nome;
     cout << "\nGenero: " << cliente->genero;

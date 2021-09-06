@@ -1,7 +1,7 @@
 #ifndef DADOS_H_INCLUDED
 #define DADOS_H_INCLUDED
 
-class dados                        //declaração de uma  classe 
+class cadastrar                        //declaração de uma  classe 
 {
 public:
     //declaração de atributos
@@ -9,26 +9,26 @@ public:
     std::string genero;                      
     int idade;
     float peso;
-    cadastrar(std::string n, std::string gener, int idd, float p);           //construtor do metodo
+    cadastrar(std::string n, std::string gener, int idd, float p);           //construtor da classe
     //prototipar no cabeçalho 'using namespace std' para poder usar string, caso contrário usar 'sdt::string'
 
 
-    //dados(/* args */);            
-    //~dados();
+               
+    ~cadastrar();           //destrutor
 };
 
-void dados::cadastrar(std::string n, std::string gener, int idd, float p)                  //declaração de métodos
+cadastrar::cadastrar(std::string n, std::string gener, int idd, float p)                  //declaração do construtor com parametros de entrada
 {
-    nome = n;         //adiciona ao final do vector
-    genero = gener;         //adiciona ao final do vector
-    idade = idd;         //adiciona ao final do vector  
-    peso = p;         //adiciona ao final do vector  
+    nome = n;         
+    genero = gener;         
+    idade = idd;         
+    peso = p;        
 }
 
-/*
-dados::~cadastrar()
+
+cadastrar::~cadastrar()             //declaração do destrutor
 {
 }
-*/
+
 
 #endif
