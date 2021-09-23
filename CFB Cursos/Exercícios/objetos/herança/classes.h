@@ -87,7 +87,7 @@ void dados::imprimir()
 class moto:public dados, public veiculo              //classe filha de multiplas classes pais (veiculo e dados)
 {
 public:
-    moto();
+    moto();             //construtor
 
 };
 
