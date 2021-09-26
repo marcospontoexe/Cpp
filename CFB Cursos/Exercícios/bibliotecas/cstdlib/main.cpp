@@ -1,6 +1,7 @@
 #include <iostream>     //define o fluxo de entrada e saida de dados (cout, cin, cr...)
 #include <cstdlib>      //biblioteca atualizada do 'stdlib.h'
 #include <ctime>        //para usar o time
+#include <vector>
 
 using namespace std;
 
@@ -32,7 +33,7 @@ int main()
     printf("num1: %i | num2: %i\n", num1, num2);
 
 
-    //alocação dinamica de memoria
+    //alocação dinamica de memoria------------------------------------------
     int tamanho=10, n;
     int *vetor;       //*vetor = vetor[4]
     vetor = (int*)calloc(tamanho, sizeof(int));           //alocando memoria para o vetor
@@ -45,7 +46,7 @@ int main()
     }
     free(vetor);            //libera a memória que foi alocada para o 'vetor'
     
-    //PESQUISA E ORDENAÇÃO
+    //PESQUISA E ORDENAÇÃO--------------------------------------------------
     int val[]={9,2,6,68,5,4,58,3,7,8};
     int pesq = 2;
     int *pos;
@@ -57,10 +58,26 @@ int main()
     }
     pos = (int*)bsearch(&pesq, val, 10, sizeof(int), comparacao);
     printf("O valor pesquisado %i esta na posicao %i\n", pesq, *pos);
-    
 
+    //aritemetica-----------------------------------------------------------------------
+    int valor = -10;
+    int numerador=20, denomidanor=3;
+    vector <int> a={2,5,6,3,8,4};
+    size_t tam_a;               //size_t armazena especificamento tamanho de elementos
+    div_t res;          //para armazenar o resutado da divisão, quando usado 'div()'    
+    //ldiv_t        //para long int
+    //lldiv_t        //para long long int 
+    tam_a = a.size();               //armazena o tamanho do vector 'a'
+    cout << "A variavel 'a' contem " << tam_a << " elementos!\n" << "\n";   
+    printf("Valor: %i\n", abs(valor));         //retorna o valor absoluto
+    res = div(numerador, denomidanor);
+    //ldiv -> long int
+    //llabs -> long long abs (valor absoluto de long long int). para c++11
+    //lldiv -> divisão de long long int. para c++11
+    printf("%i dividido por %i: ",numerador, denomidanor);
+    cout << res.quot << ", com resto: " << res.rem << "\n";
 
-    //controle de ambiente
+    //controle de ambiente--------------------------------------------------------------------------------
     //_Exit(EXIT_SUCCESS);            //finaliza o programa
     printf("Variavel de ambiente PATH:\n%s\n", getenv("PATH"));
     atexit(fim);                //chama a função fim ao sair da função main. 
