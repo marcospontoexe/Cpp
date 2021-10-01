@@ -1,8 +1,22 @@
  #include <iostream>     //define o fluxo de entrada e saida de dados (cout, cin, cr)
- #include <utility>        //para usar pair
+ #include <ctime>        //atualização da <time.h>
 
 using namespace std;
+/*
+struct dobrar
+{
+    int n;
+    int dobro()
+    {
+        return n*2;
+    }
+};
 
+int soma(int a, int b)
+{
+    return a+b;
+}
+*/
 int main()
 {
     auto n1{10}, n2{5};
