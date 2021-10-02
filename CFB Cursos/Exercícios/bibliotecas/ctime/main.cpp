@@ -14,7 +14,7 @@ void contador(int num, int cont = 0)
 
 int main()
 {
-    clock_t t;
+    clock_t t; 
     t = clock();              //clock() retorna a quantidade de ciclos de processamento
     cout << "Contagem: \n";
     contador(100);
@@ -22,6 +22,11 @@ int main()
     cout << "ciclos de processamento: " << t << "\n";
     cout << "tempo de processamento: " << (float(t))/CLOCKS_PER_SEC << " s\n";
 
-    
+    time_t data;
+    struct tm *infodata;
+    time(&data);
+    infodata = localtime(&data);
+    cout << "hoda e data arual: " << asctime(infodata) << "\n";
+
     return 0;
 }
