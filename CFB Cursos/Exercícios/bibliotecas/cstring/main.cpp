@@ -20,8 +20,37 @@ int main()
     strcpy(txt2, txt1);         //copia txt1 para txt2
     cout << "txt2: " << txt2 << "\n";
 
+    char *str1;
+    char str2[] = "fazendo um teste. teste 1 2 3/123456!";
+    char pesquisa = 'e';
+    str1 = (char*)memchr(str2, pesquisa, strlen(str2));         //memchr() procura no bloco de memoria, procura um caractere na string 'str2'
+    
+    cout << "str2: " << str2 <<"\n";
+    if(str1 != NULL)
+    {
+        cout << "Letra: " << pesquisa << " encontrada na posicao " << str1-str2+1 << ".\n";
+    }
+    else
+    {
+        cout << "Letra: " << pesquisa << " nao contrada!\n";
+    }
 
-
+    str1 = strrchr(str2, pesquisa);         //strrchr() procura no bloco de memoria, procura um caractere na string 'str2' retornando o ultimo índice do vetor
+    if(str1 != NULL)
+    {
+        cout << "Letra: " << pesquisa << " encontrada na posicao " << str1-str2+1 << ".\n";
+    }
+    else
+    {
+        cout << "Letra: " << pesquisa << " nao contrada!\n";
+    }
+    str1 = strtok(str2, "/.");         //strrchr() procura no bloco de memoria, procura um caractere na string 'str2' retornando o ultimo índice do vetor
+    while(str1 != NULL)
+    {
+        cout << str1 << ".\n";
+        str1 = strtok(NULL, "/.");
+    }
+    
     
     return 0;
 }
