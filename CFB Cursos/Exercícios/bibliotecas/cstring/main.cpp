@@ -9,7 +9,7 @@ int main()
     char txt1[50] = "fazendo um teste!";
     char txt2[50] ="";
     cout << "txt1: " << txt1 << "\n";
-    cout << "txt1 contem " << strlen(txt1) << " caracteres!\n";
+    cout << "txt1 contem " << strlen(txt1) << " caracteres!\n";         //strlen() retorna o tamanho de índices da string
     
     strcat(txt1, " - e de novo!");         //concatena duas strings
     cout << "txt1: " << txt1 << "\n";
