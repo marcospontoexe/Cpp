@@ -11,6 +11,11 @@ int main()
     string::iterator it = tmp.begin();              //'it' recebe o endereço do primeiro índice da string 
     //string::iterator it = tmp.end();              //'it' recebe o endereço do ultimo índice da string (terminador nulo)    
     cout << "tmp: " << tmp << "\n";
+    tmp += "teste, teste...";               //adiciona na string
+    tmp.pop_back();             //remove o ultimo caractere
+    tmp.erase(3, 4);                //remove 3 caractere a partir do terceiro elemento
+    tmp.replace(10, 4, "outro");        //substitui os 4 elementos a partir do 10 elemento, por outra string
+    cout << "tmp: " << tmp << "\n";
     cout << "tamanho da string tmp: " << tmp.size() << "\n";    //size() chama o tamanho da string
     //cout << "tamanho de string: " << tmp.length() << "\n";    //size() chama o tamanho da string   
     cout << "tamanho maximo da string: " << tmp.max_size() << "\n";    //max_size() retorna o tamanho maximo da string
@@ -26,6 +31,17 @@ int main()
         cout << "string vazia!\n"; 
     }
 
+    string tmp2 = "testando a funcao STRING";
+    size_t posicao = tmp2.find("funcao");               //retorna o indice da primeira ocorrencia
+
+    cout << "posicao da primeira ocorrencia: " << posicao <<"\n";
+    if(posicao != string::npos())
+    {
+        /* code */
+    }
     
+    cout << "tmp2: " << tmp2 << "\n";
+
+
     return 0;
 }
