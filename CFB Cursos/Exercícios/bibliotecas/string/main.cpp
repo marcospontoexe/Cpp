@@ -32,15 +32,21 @@ int main()
     }
 
     string tmp2 = "testando a funcao STRING";
-    size_t posicao = tmp2.find("funcao");               //retorna o indice da primeira ocorrencia
-
+    cout << "tmp2: " << tmp2 << "\n";
+    size_t posicao = tmp2.find("ando");               //retorna o indice da primeira ocorrencia
     cout << "posicao da primeira ocorrencia: " << posicao <<"\n";
-    if(posicao != string::npos())
+    if(posicao == string::npos)       //npos é um membro estático da classe string, ele contem o valor maximo de 'size_t' 
     {
-        /* code */
+        cout << "pesquisa mal sucedida!\n";
+    }
+    posicao = tmp2.find("loucura");               //retorna o indice da primeira ocorrencia
+    cout << "posicao da primeira ocorrencia: " << posicao <<"\n";
+    if(posicao == string::npos)       //npos é um membro estático da classe string, ele contem o valor maximo de 'size_t' 
+    {
+        cout << "pesquisa mal sucedida!\n";
     }
     
-    cout << "tmp2: " << tmp2 << "\n";
+
 
 
     return 0;
