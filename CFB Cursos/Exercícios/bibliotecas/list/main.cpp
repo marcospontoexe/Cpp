@@ -1,121 +1,183 @@
  #include <iostream>     //define o fluxo de entrada e saida de dados (cout, cin, cr)
- #include <vector>      
+ #include <list>      
  
 
 using namespace std;
 
 int main()
 {     
-    vector<int> vt{0,1,2,3,4,5,6,7,8,9};
-    cout << "vt: ";
-    for(auto it=vt.begin(); it != vt.end(); it++)          //usando iterator
+    list<int> lst1;
+    list<int> lst2(10, 1);              //cria um list com dez elementos, preenchidos com numero 1
+    list<int> lst3(lst2);
+    list<int> lst4={1,2,3,4,5};
+
+
+    cout << "lst2: ";
+    for(auto it=lst2.begin(); it != lst2.end(); it++)          //usando iterator
     {
         cout << *it << " ";
     }
     cout << "\n";
-    if(vt.empty())            //caso o vector esteja vazio
-    {
-        cout << "vector vazio!\n";
-    }
-    cout << "tamanho do vector 'vt': " << vt.size() << "\n";               //tamanho do vector
-    cout << "tamanho maximo do vector 'vt': " << vt.max_size() << "\n";        //número maximo de elementos que o vector pode ter
-    cout << "elemento da posicao 3: " << vt[3] << "\n";   
-    cout << "elemento da posicao 0: " << vt.front() << "\n";   //retorno o primeiro elemento do vector       
-    cout << "ultimo elemento do array: " << vt.back() << "\n";   //retorno o primeiro elemento do vector 
-    vt.resize(5);           //redimensiona o vector para ter 5 posições
-    cout << "vt: ";
-    for(auto i:vt)
-    {
-        cout << i << " ";
-    }
-    cout << "\n"; 
-    cout << "capacidade maxima de vt: " << vt.capacity() << "\n";       //retorna a capacidade do vector no momento em que foi declarado. 
-    vt.shrink_to_fit();                     //deixa a capacidade maxima do vector igual ao numero de elementos
-    cout << "capacidade maxima de vt: " << vt.capacity() << "\n";       //retorna a capacidade do vector no momento em que foi declarado. 
-    vector <int> vt2;
-    vt2.assign(5,0);                //redimensiona um vector com cinco posiçoes, preenchidas com zero
-    cout << "vt2: ";
-    for(auto i:vt2)
-    {
-        cout << i << " ";
-    }
-    cout << "\n";
-    vt2.assign(vt.begin(), vt.end());                //redimensiona um vector com os elemento de outro vector
-    cout << "vt2: ";
-    for(auto i:vt2)
-    {
-        cout << i << " ";
-    }
-    cout << "\n";
-    vt2.push_back(0);       //adiciona o zero no final  
-    cout << "vt2: ";
-    for(auto i:vt2)
-    {
-        cout << i << " ";
-    }
-    cout << "\n";
-    vt2.pop_back();         //exclui o ultimo elemento do vector
-    vt2.pop_back();         //exclui o ultimo elemento do vector
-    cout << "vt2: ";
-    for(auto i:vt2)
-    {
-        cout << i << " ";
-    }
-    cout << "\n";
-    vector <int>::iterator itt;         //declaração do iterator
-    itt = vt2.begin();              //iterator recebe o endereço do primeiro indice do vector
-    vt2.insert(itt, 2);             //isere o numero 2 no inicio do vector
-    cout << "vt2: ";
-    for(auto i:vt2)
-    {
-        cout << i << " ";
-    }
-    cout << "\n";
-    itt = vt2.begin()+4;              //iterator recebe o endereço do primeiro indice do vector + 4 posições
-    vt2.insert(itt, 0);             //isere o numero 0 no indice 5 do vector
-    cout << "vt2: ";
-    for(auto i:vt2)
+
+    cout << "lst4: ";
+    for(auto i:lst4)          
     {
         cout << i << " ";
     }
     cout << "\n";
 
-    itt = vt2.end();              //iterator recebe o endereço do ultimo indice do vector
-    vt2.insert(itt, 5, 0);             //isere cinco zeros a partir do final do vector
-    cout << "vt2: ";
-    for(auto i:vt2)
+    cout << "tamanho do list 'lst4': " << lst4.size() << "\n";               //tamanho da list
+    cout << "tamanho maximo do list 'lst4': " << lst4.max_size() << "\n";        //número maximo de elementos que o list pode ter
+    //cout << "elemento da posicao 3: " << lst2[3] << "\n";   
+    cout << "elemento da posicao 0: " << lst4.front() << "\n";   //retorno o primeiro elemento do list       
+    cout << "ultimo elemento do list 'lst4': " << lst4.back() << "\n";   //retorno o primeiro elemento do list
+    lst3.clear();            //exclui todos os elementos do list
+    cout << "lst3: ";
+    for(auto i:lst3)
     {
         cout << i << " ";
     }
     cout << "\n";
-    itt = vt2.begin();              //iterator recebe o endereço do primeiro indice do vector
-    vt2.erase(itt);                         //remove o primeiro elemento     
-    vt2.erase(vt2.begin()+5, vt2.end());        //remove os elementos do indice 5 até o final
-    cout << "vt2: ";
-    for(auto i:vt2)
+    lst3.assign(10, 0);             //redimensiona um list com 10 posiçoes, preenchidas com zero
+    cout << "lst3: ";
+    for(auto i:lst3)
     {
         cout << i << " ";
     }
     cout << "\n";
 
-    vt2.swap(vt);           //os vector trocam de elementos entre eles
-    cout << "vt2: ";
-    for(auto i:vt2)
+    lst3.assign(lst4.begin(), lst4.end());                //redimensiona um vector com os elemento de outro vector
+    cout << "lst3: ";
+    for(auto i:lst3)
     {
         cout << i << " ";
     }
     cout << "\n";
-    vt2.emplace(vt2.begin()+3, 3);              //inseri o 3 na posição tres, sem substituir nenhum elemento, porem mantem a capacidade maxima
+    
+    lst4.push_back(0);       //adiciona o zero no final 
+    lst4.push_front(22);       //adiciona o 22 no inicio      
+    cout << "lst4: ";
+    for(auto i:lst4)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+    lst4.pop_back();         //exclui o ultimo elemento do list
+    lst4.pop_back();         //exclui o ultimo elemento do list
+    lst4.pop_front();         //exclui o primeiro elemento do list    
+    cout << "lst4: ";
+    for(auto i:lst4)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
 
-    vt2.clear();            //exclui todos os elementos do vector
-    cout << "vt2: ";
-    for(auto i:vt2)
+    cout << "lst1: ";
+    for(auto i:lst1)
     {
         cout << i << " ";
     }
     cout << "\n";
-    cout << "tamanho do vector 'vt2': " << vt2.size() << "\n";               //tamanho do vector 
-    cout << "tamanho maximo do vector 'vt2': " << vt2.max_size() << "\n";        //número maximo de elementos que o vector pode ter
+    list <int>::iterator itt;         //declaração do iterator
+    itt = lst1.begin();              //iterator recebe o endereço do primeiro indice do list
+    lst1.insert(itt, 2);             //isere o numero 2 no inicio do list
+    itt++;
+    lst1.insert(itt, 0);             //isere o numero 0 no indice 1 do list
+    cout << "lst1: ";
+    for(auto i:lst1)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+    itt = lst1.end();              //iterator recebe o endereço do ultimo indice do list
+    lst1.insert(itt, 5, 2);             //isere cinco 2 a partir do final do list
+    cout << "lst1: ";
+    for(auto i:lst1)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+
+    itt = lst1.begin();              //iterator recebe o endereço do primeiro indice do list
+    lst1.erase(itt);                         //remove o primeiro elemento     
+    //lst1.erase(lst1.begin()+3, lst1.end());        //remove os elementos do indice 5 até o final
+    cout << "lst1: ";
+    for(auto i:lst1)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+
+    lst1.swap(lst3);           //os vector trocam de elementos entre eles
+    cout << "lst1: ";
+    for(auto i:lst1)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+    lst1.resize(3);           //redimensiona o vector para ter 3posições
+    cout << "lst1: ";
+    for(auto i:lst1)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+
+    lst1.emplace(lst1.begin(), 3);              //insere o 3 no inicio, sem substituir nenhum elemento
+    lst1.emplace_back(3);              //insere o 3 no final da list
+    lst1.emplace_front(1);              //insere o 1 no inicio da list
+    cout << "lst1: ";
+    for(auto i:lst1)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+    lst1.remove(3);             //remove todos os indices com o elemento 3
+    cout << "lst1: ";
+    for(auto i:lst1)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+    lst4.push_front(22);       //adiciona o 22 no inicio
+    lst4.push_front(13);       //adiciona o 13 no inicio
+    lst4.push_front(22);       //adiciona o 22 no inicio
+    lst4.push_front(5);       //adiciona o 22 no inicio
+    cout << "lst4: ";
+    for(auto i:lst4)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+    lst4.sort();            //ordena em ordem crescente
+    cout << "lst4: ";
+    for(auto i:lst4)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+    lst4.unique();          //remove os elementos repetidos
+    cout << "lst4: ";
+    for(auto i:lst4)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+
+    lst4.merge(lst3);               //mescla duas list
+    cout << "lst4: ";
+    for(auto i:lst4)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
+    lst4.reverse();                 //reordena a list em ordem reversa
+    cout << "lst4: ";
+    for(auto i:lst4)
+    {
+        cout << i << " ";
+    }
+    cout << "\n";
 
     return 0;
 }
