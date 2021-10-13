@@ -8,10 +8,37 @@ void imp(auto a);
 
 int main()
 {     
-    vector<int> vt{0,1,2,3,4,5,6,7,8,9};
+    vector<int> vt{0,-2,4,6,8,9};
     cout << "vt: ";
     imp(vt);
     cout << "\n";
+    
+    if(all_of(vt.begin(), vt.end(), [](auto i){return i%2==0;}))            //caso todos os elementos sejam pares
+    {
+        cout << "Todos elementos sao pares!\n";
+    }
+    else
+    {
+        cout << "Nem todos os elementos sao pares!\n";
+    }
+        
+    if(any_of(vt.begin(), vt.end(), [](auto i){return i%2==1;}))            //caso algum elemento seja impar
+    {
+        cout << "eh impar!\n";
+    }
+    else
+    {
+        cout << "nehum numero impar!\n";
+    }
+
+    if(none_of(vt.begin(), vt.end(), [](auto i){return i<0;}))            //retorna false caso algum elemento retorne false
+    {
+        cout << "existe numero positivo!\n";
+    }
+    else
+    {
+        cout << "existe numero negativo!\n";
+    }
 
     /*
     if(vt.empty())            //caso o vector esteja vazio
