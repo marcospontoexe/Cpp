@@ -1,6 +1,6 @@
  #include <iostream>     //define o fluxo de entrada e saida de dados (cout, cin, cr)
  #include <vector>      
- #include <algorithm>
+ #include <algorithm>   //funções para trabalhar com coleções
  
 
 using namespace std;
@@ -53,6 +53,20 @@ int main()
     cout << "quantidade de numeros 1: " << count(vt.begin(), vt.end(),1) << "\n";       //retorna a quantidade de valores encontrados
 
     cout << "quantidade de numeros pares: " << count_if(vt.begin(), vt.end(), [](auto i){return i%2==0;}) << "\n";       //retorna a quantidade de valores encontrados, caso a condição seja atendida
+
+    replace(vt.begin(), vt.end(), 4, 2);       //substitui os elementos '4' por '2'
+    cout << "apos 'replace': ";
+    imp(vt);
+    cout << "\n";
+ 
+    /* outras finções
+    equal = verifica se os elementos de uma coleção são iguais a outra coleção. os elementos precisam estar na mesma ordem
+    search = pesquisa se uma coleção esta em outra. 
+    copy = substitui os elementos de uma coleção para outra
+    copy_if = substitui os elementos de uma coleção para outra, apenas quando a condição é verdadeira
+    move = retira de uma coleção e passa para outra
+    swap = troca os elementos de uma coleção para outra
+    */
 
     /*
     if(vt.empty())            //caso o vector esteja vazio
