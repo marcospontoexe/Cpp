@@ -8,7 +8,7 @@ void imp(auto a);
 
 int main()
 {     
-    vector<int> vt{0,-2,4,6,8,9};
+    vector<int> vt{0,-2,4,5,6,8};
     cout << "vt: ";
     imp(vt);
     cout << "\n";
@@ -39,6 +39,20 @@ int main()
     {
         cout << "existe numero negativo!\n";
     }
+
+    cout << "Dobro: ";
+    for_each(vt.begin(), vt.end(), [](auto i){cout << i*2 << " ";});           //aplica a função lambda para todos os elementos da coleção
+    cout << "\n";
+
+    auto it = find(vt.begin(), vt.end(), 4);       //retorna o endereço da busca, caso não ache retorna um negativo
+    cout << "resutado da busca: " << *it << "\n";
+
+    auto it2 = find_if(vt.begin(), vt.end(), [](auto i){return i%2==1;});  //caso a lambda seja verdadeira, retorna o endereço da busca, caso não ache retorna um numero grande
+    cout << "primeiro impar: " << *it2 << "\n";
+
+    cout << "quantidade de numeros 1: " << count(vt.begin(), vt.end(),1) << "\n";       //retorna a quantidade de valores encontrados
+
+    cout << "quantidade de numeros pares: " << count_if(vt.begin(), vt.end(), [](auto i){return i%2==0;}) << "\n";       //retorna a quantidade de valores encontrados, caso a condição seja atendida
 
     /*
     if(vt.empty())            //caso o vector esteja vazio
