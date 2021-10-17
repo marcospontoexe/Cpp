@@ -1,2 +1,0 @@
-QVector
-Switch case
