@@ -1,0 +1,3 @@
+Sinais e Slots:
+O sinais são o eventos programados.
+Os slots são as respostas aos Sinais
