@@ -1,0 +1,1 @@
+este cógido mostra como criar um metodo de conexão não existente.
