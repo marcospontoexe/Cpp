@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(mudatexto())); //definição da conexão entre botão e label
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(mudatexto())); //definição da conexão entre sinal e slot
 
 }
 
@@ -17,14 +17,15 @@ void MainWindow::mudatexto()   //declaração do método, entre construtor e des
 }
 
 
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->label_2->setText("Oi");
+}
+
+
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-
-void MainWindow::on_pushButton_2_clicked()
-{
-    ui->label_2->setText("Oi");
-}
 

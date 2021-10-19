@@ -16,7 +16,7 @@ public:
     ~MainWindow();
 
 public slots:
-    void mudatexto();           //metodo criado, e associado à estrutura slots
+    void mudatexto();           //prototipação de um metodo, que craira uma conexão entre um sinal e um slot
 
 private slots:
     void on_pushButton_2_clicked();
