@@ -19,7 +19,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    janela form2;       //declaração do atributo (form2) da classe janela
+    janela form2;       //declaração do atributo da classe janela
 
 
     QMessageBox::StandardButton resposta;
