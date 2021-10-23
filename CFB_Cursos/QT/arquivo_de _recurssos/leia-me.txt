@@ -1,0 +1,2 @@
+O arquivo de recursos concentra todo tipo de informação (imagens, texto, sons) que não pertence
+ ao programa.
