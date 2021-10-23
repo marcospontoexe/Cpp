@@ -9,8 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPixmap img(":/imagens/imagens/foto.png");                //Criação do objeto
-    ui->label_2->setPixmap(img);    //insirir a imagem no label_2
+    QPixmap img(":/imagens/imagens/foto.png");             //Criação do objeto, com o caminho do arquivo
+    ui->label_2->setPixmap(img);                         //insirir a imagem no label_2
 }
 
 MainWindow::~MainWindow()

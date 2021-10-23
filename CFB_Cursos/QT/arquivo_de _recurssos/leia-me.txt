@@ -1,2 +1,4 @@
 O arquivo de recursos concentra todo tipo de informação (imagens, texto, sons) que não pertence
  ao programa.
+É necessário criar a classe "qt resource file":
+https://www.youtube.com/watch?v=iZHYswm-ZxE&list=PLx4x_zx8csUjczg1qPHavU1vw1IkBcm40&index=116&ab_channel=CFBCursos
