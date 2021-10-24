@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new/comidas">
+        <file>img/arroz.jpg</file>
+        <file>img/carne.png</file>
+        <file>img/ovo.png</file>
+        <file>img/pizza.png</file>
+        <file>img/sobremesa.jpg</file>
+        <file>img/sopa.png</file>
+        <file>img/feijao.png</file>
+        <file>img/macarrao.jpg</file>
+    </qresource>
+</RCC>
