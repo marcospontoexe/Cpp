@@ -1,0 +1,1 @@
+também converte numero para QString
