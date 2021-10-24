@@ -62,7 +62,7 @@ void MainWindow::on_pushButton_2_clicked()      //notão "2° maneira"
     QMessageBox::information(this, "cheekBoxes selecionadas", msg);
 }
 
-
+//essa função pode ser construia apenas clicando em cima da checkbox e selecianando 'go to slot'
 void MainWindow::on_checkBox_1_stateChanged(int arg1)         //arg1=1 caso a caixa esteja marcada,  arg1=0 caso contrário
 {
     if(arg1)
