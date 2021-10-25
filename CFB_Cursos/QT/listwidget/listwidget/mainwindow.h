@@ -28,7 +28,7 @@ private slots:
 
     void on_pushButton_Apagar_geral_clicked();
 
-    void on_pushButton_Apagar_clicked();
+    //void on_pushButton_Apagar_clicked();
 
 private:
     Ui::MainWindow *ui;

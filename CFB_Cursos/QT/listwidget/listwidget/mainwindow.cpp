@@ -4,6 +4,7 @@
 #include <QDebug>
 
 QVector<int> marcados;              //qvector do tipo int
+QVector<int>::Iterator it;
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -54,9 +55,10 @@ void MainWindow::on_pushButton_Marcar_clicked()
 
 void MainWindow::on_pushButton_Desmarcar_clicked()
 {
+    it = marcados.begin();
     ui->listWidget->currentItem()->setForeground(Qt::black);
     ui->listWidget->currentItem()->setBackground(Qt::white);
-    marcados.erase(marcados.begin()+ui->listWidget->currentRow());
+    marcados.erase(it + ui->listWidget->currentRow());
     qDebug() << "Itens marcados: " << marcados;
 }
 
@@ -79,11 +81,11 @@ void MainWindow::on_pushButton_Apagar_geral_clicked()
     ui->listWidget->clear();                //apaga todos os itens da listwidget
 }
 
-
+/*
 void MainWindow::on_pushButton_Apagar_clicked()
 {
-    //ui->listWidget->currentItem()->removeItemWidget();
-    QListWidget::removeItemWidget(ui->listWidget->currentItem());
-
+    ui->listWidget->currentItem()->QListWidgetItem::d removeItemWidget();
+    //QListWidget::removeItemWidget(ui->listWidget->currentItem());
 }
+*/
 
