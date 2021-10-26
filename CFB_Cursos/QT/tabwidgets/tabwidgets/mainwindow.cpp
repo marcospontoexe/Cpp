@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "cadastro.h"                   //adicionando o form cadastro
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -31,5 +32,14 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     ui->tabWidget->removeTab(ui->tabWidget->currentIndex());     //remove a tab selecionada (currentIndex())
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    int nuntabs = ui->tabWidget->count() + 1;       //retorna a quantidade de tabs existentes
+    QString ntabs = QString::number(nuntabs);           //converte um inteiro em Qstring
+    ui->tabWidget->addTab(new cadastro, "Cadastro: " + ntabs);       //adiciona um novo formulário (cadastro)
+
 }
 

@@ -33,6 +33,7 @@ public:
     QWidget *tab_3;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -68,6 +69,9 @@ public:
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(140, 170, 111, 23));
+        pushButton_3 = new QPushButton(centralwidget);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(270, 170, 121, 23));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -79,7 +83,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -95,6 +99,7 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Page", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "adicionar tab", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "apagar tab atual", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "adicionar cadastro", nullptr));
     } // retranslateUi
 
 };
