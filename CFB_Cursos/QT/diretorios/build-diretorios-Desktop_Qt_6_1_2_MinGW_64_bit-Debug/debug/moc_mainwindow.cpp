@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../fomulario/mainwindow.h"
+#include "../../diretorios/mainwindow.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -22,19 +22,21 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    const uint offsetsAndSize[6];
-    char stringdata0[34];
+    const uint offsetsAndSize[8];
+    char stringdata0[48];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 10), // "MainWindow"
-QT_MOC_LITERAL(11, 21), // "on_PushButton_clicked"
-QT_MOC_LITERAL(33, 0) // ""
+QT_MOC_LITERAL(11, 30), // "on_comboBox_currentTextChanged"
+QT_MOC_LITERAL(42, 0), // ""
+QT_MOC_LITERAL(43, 4) // "arg1"
 
     },
-    "MainWindow\0on_PushButton_clicked\0"
+    "MainWindow\0on_comboBox_currentTextChanged\0"
+    "\0arg1"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,10 +54,10 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x08,    0 /* Private */,
+       1,    1,   20,    2, 0x08,    0 /* Private */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    3,
 
        0        // eod
 };
@@ -66,11 +68,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_PushButton_clicked(); break;
+        case 0: _t->on_comboBox_currentTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject MainWindow::staticMetaObject = { {
@@ -81,7 +82,7 @@ const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
 
 
 >,
