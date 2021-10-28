@@ -18,6 +18,13 @@ public:
 private slots:
     void on_comboBox_currentTextChanged(const QString &arg1);
 
+    void on_pushButton_criar_clicked();
+
+
+    void on_listWidget_doubleClicked(const QModelIndex &index);
+
+    void on_pushButton_apagar_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
