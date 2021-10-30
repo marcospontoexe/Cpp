@@ -28,6 +28,7 @@ public:
     QWidget *centralwidget;
     QWidget *widget;
     QVBoxLayout *verticalLayout_2;
+    QPushButton *pushButton_abrir;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QPlainTextEdit *plainTextEdit;
@@ -50,6 +51,11 @@ public:
         verticalLayout_2 = new QVBoxLayout(widget);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        pushButton_abrir = new QPushButton(widget);
+        pushButton_abrir->setObjectName(QString::fromUtf8("pushButton_abrir"));
+
+        verticalLayout_2->addWidget(pushButton_abrir);
+
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
@@ -97,6 +103,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        pushButton_abrir->setText(QCoreApplication::translate("MainWindow", "Abrir arquivo", nullptr));
         pushButton_gravar->setText(QCoreApplication::translate("MainWindow", "gravar no arquivo", nullptr));
         pushButton_ler->setText(QCoreApplication::translate("MainWindow", "ler do arquivo", nullptr));
     } // retranslateUi
