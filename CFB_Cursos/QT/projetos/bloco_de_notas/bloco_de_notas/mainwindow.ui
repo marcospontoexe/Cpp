@@ -44,6 +44,8 @@
     <addaction name="actionSalvar"/>
     <addaction name="actionSalvar_como"/>
     <addaction name="separator"/>
+    <addaction name="actionImprimir"/>
+    <addaction name="separator"/>
     <addaction name="actionFechar"/>
    </widget>
    <widget class="QMenu" name="menuEditar">
@@ -215,9 +217,17 @@
     <string>Cor de fundo</string>
    </property>
   </action>
+  <action name="actionImprimir">
+   <property name="icon">
+    <iconset resource="../arquivos/arquivos.qrc">
+     <normaloff>:/icones/imprimir.png</normaloff>:/icones/imprimir.png</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimir</string>
+   </property>
+  </action>
  </widget>
  <resources>
-  <include location="../arquivos/arquivos.qrc"/>
   <include location="../arquivos/arquivos.qrc"/>
   <include location="../arquivos/arquivos.qrc"/>
  </resources>

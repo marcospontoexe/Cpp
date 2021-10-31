@@ -13,5 +13,6 @@
         <file>salvar_como.png</file>
         <file>colar.png</file>
         <file>sobre.png</file>
+        <file>imprimir.png</file>
     </qresource>
 </RCC>

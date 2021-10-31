@@ -8,6 +8,8 @@
 #include <QFont>
 #include <QColorDialog>
 #include <QColor>
+#include <QPrintDialog>
+#include <Qprinter>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -162,5 +164,19 @@ void MainWindow::on_actionCor_de_fundo_triggered()          //botão para altera
     {
         QMessageBox::warning(this, "ERRO!", "nenhuma cor foi selecionada!");
     }
+}
+
+
+void MainWindow::on_actionImprimir_triggered()              //botão para imprimir (é necessário adicionar o comando 'printsupport' após o comando 'QT += core gui', no arquivo .pro)
+{
+    QPrinter impressora;
+    impressora.setPrinterName("impressora_default");
+    QPrintDialog cx_impressora(&impressora, this);
+    if(cx_impressora.exec() == QDialog::Rejected)
+    {
+        QMessageBox::warning(this, "ERRO!", "A impressão foi cancelada!");
+        return;         //aborta a aplicação de imprimir
+    }
+    ui->textEdit->print(&impressora);
 }
 
