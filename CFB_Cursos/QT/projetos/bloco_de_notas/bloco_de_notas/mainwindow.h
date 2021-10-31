@@ -20,6 +20,22 @@ private slots:
 
     void on_actionNovo_triggered();
 
+    void on_actionSalvar_como_triggered();
+
+    void on_actionSalvar_triggered();
+
+    void on_actionFechar_triggered();
+
+    void on_actionCopiar_triggered();
+
+    void on_actionRecortar_triggered();
+
+    void on_actionColar_triggered();
+
+    void on_actionDesfazer_triggered();
+
+    void on_actionRefazer_triggered();
+
 private:
     Ui::MainWindow *ui;
 
