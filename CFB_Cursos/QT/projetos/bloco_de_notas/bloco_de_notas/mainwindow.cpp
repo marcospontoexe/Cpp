@@ -22,7 +22,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionbrir_triggered()
 {
-
+    QString filtro = "Todos arquivos (*.*) ;; Arquivos de texto (*.txt) ;; Arquivos Word (*.doc)";
+    QString nome_arquivo = QFileDialog::getOpenFileName(this, "Abrir arquivo", "C://", filtro); //abre uma caixa de diálogo com o local e nome do arquivo contidos no 'C:'
+    QFile arquivo(nome_arquivo);
+    local = nome_arquivo;
+    if(!arquivo.open(QFile::ReadOnly | QFile::Text))      //retorna true (!) caso não consiga abrir o arquivo de texto (QFile::Text), como modo de leitura (QFile::ReadOnly)
+    {
+        QMessageBox::warning(this, "ERRO!", "Não possível abrir o arquivo!");
+        return;     //finaliza a aplicação
+    }
+    QTextStream entrada(&arquivo);            //assossia o objeto 'entrada' ao aobjeto 'arquivo'
+    QString texto = entrada.readAll();             //'texto' recebe todo o conteudo do arquivo aberto
+    ui->textEdit->setText(texto);        //mostra o conteudo da string 'texto' na tela do 'plainTextEdit'
+    arquivo.close();            //fecha o arquivo
 }
 
 
