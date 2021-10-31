@@ -36,12 +36,16 @@ public:
     QAction *actionDesfazer;
     QAction *actionRefazer;
     QAction *actionBloco_de_anota_es;
+    QAction *actionFonte;
+    QAction *actionCor;
+    QAction *actionCor_de_fundo;
     QWidget *centralwidget;
     QTextEdit *textEdit;
     QMenuBar *menubar;
     QMenu *menuArquivo;
     QMenu *menuEditar;
     QMenu *menuSobre;
+    QMenu *menuFormatar;
     QStatusBar *statusbar;
     QToolBar *toolBar;
 
@@ -105,6 +109,12 @@ public:
         QIcon icon10;
         icon10.addFile(QString::fromUtf8(":/icones/sobre.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionBloco_de_anota_es->setIcon(icon10);
+        actionFonte = new QAction(MainWindow);
+        actionFonte->setObjectName(QString::fromUtf8("actionFonte"));
+        actionCor = new QAction(MainWindow);
+        actionCor->setObjectName(QString::fromUtf8("actionCor"));
+        actionCor_de_fundo = new QAction(MainWindow);
+        actionCor_de_fundo->setObjectName(QString::fromUtf8("actionCor_de_fundo"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         textEdit = new QTextEdit(centralwidget);
@@ -120,6 +130,8 @@ public:
         menuEditar->setObjectName(QString::fromUtf8("menuEditar"));
         menuSobre = new QMenu(menubar);
         menuSobre->setObjectName(QString::fromUtf8("menuSobre"));
+        menuFormatar = new QMenu(menubar);
+        menuFormatar->setObjectName(QString::fromUtf8("menuFormatar"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -130,6 +142,7 @@ public:
 
         menubar->addAction(menuArquivo->menuAction());
         menubar->addAction(menuEditar->menuAction());
+        menubar->addAction(menuFormatar->menuAction());
         menubar->addAction(menuSobre->menuAction());
         menuArquivo->addAction(actionNovo);
         menuArquivo->addAction(actionbrir);
@@ -145,6 +158,9 @@ public:
         menuEditar->addAction(actionDesfazer);
         menuEditar->addAction(actionRefazer);
         menuSobre->addAction(actionBloco_de_anota_es);
+        menuFormatar->addAction(actionFonte);
+        menuFormatar->addAction(actionCor);
+        menuFormatar->addAction(actionCor_de_fundo);
         toolBar->addAction(actionNovo);
         toolBar->addAction(actionbrir);
         toolBar->addAction(actionSalvar);
@@ -178,9 +194,13 @@ public:
         actionDesfazer->setText(QCoreApplication::translate("MainWindow", "Desfazer", nullptr));
         actionRefazer->setText(QCoreApplication::translate("MainWindow", "Refazer", nullptr));
         actionBloco_de_anota_es->setText(QCoreApplication::translate("MainWindow", "Bloco de anota\303\247\303\265es", nullptr));
+        actionFonte->setText(QCoreApplication::translate("MainWindow", "Fonte", nullptr));
+        actionCor->setText(QCoreApplication::translate("MainWindow", "Cor da fonte", nullptr));
+        actionCor_de_fundo->setText(QCoreApplication::translate("MainWindow", "Cor de fundo", nullptr));
         menuArquivo->setTitle(QCoreApplication::translate("MainWindow", "Arquivo", nullptr));
         menuEditar->setTitle(QCoreApplication::translate("MainWindow", "Editar", nullptr));
         menuSobre->setTitle(QCoreApplication::translate("MainWindow", "Sobre", nullptr));
+        menuFormatar->setTitle(QCoreApplication::translate("MainWindow", "Formatar", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 

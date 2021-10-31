@@ -4,6 +4,10 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QFontDialog>          //caixa de diálogo para tipo de fonte
+#include <QFont>
+#include <QColorDialog>
+#include <QColor>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -28,7 +32,7 @@ void MainWindow::on_actionbrir_triggered()
     local = nome_arquivo;
     if(!arquivo.open(QFile::ReadOnly | QFile::Text))      //retorna true (!) caso não consiga abrir o arquivo de texto (QFile::Text), como modo de leitura (QFile::ReadOnly)
     {
-        QMessageBox::warning(this, "ERRO!", "Não possível abrir o arquivo!");
+        QMessageBox::warning(this, "ERRO!", "nenhum arquivo foi aberto!");
         return;     //finaliza a aplicação
     }
     QTextStream entrada(&arquivo);            //assossia o objeto 'entrada' ao aobjeto 'arquivo'
@@ -115,5 +119,48 @@ void MainWindow::on_actionDesfazer_triggered()              //botão desfazer
 void MainWindow::on_actionRefazer_triggered()               //botão refazer
 {
     ui->textEdit->redo();
+}
+
+
+void MainWindow::on_actionFonte_triggered()
+{
+    bool fonte_ok;
+    QFont fonte = QFontDialog::getFont(&fonte_ok, this);         //o objeto 'fonte' recebe o tipo de fonte selecionada na caixa de diálogo
+    if(fonte_ok)            //retorna true caso tenha sido selecionada uma fonte na caixa de dialogo
+    {
+        ui->textEdit->setFont(fonte);       //altera a fonte no textedit
+    }
+    else
+    {
+        QMessageBox::warning(this, "ERRO!", "nenhuma fonte foi selecionada!");
+    }
+}
+
+
+void MainWindow::on_actionCor_triggered()               //botão para alterar a cor da fonte do textedit
+{
+    QColor cor = QColorDialog::getColor(Qt::black, this, "Selecione uma cor");            //retorna a cor selecionada na caixa de dialogo. QColorDialog(cor inicial, parent, diálogo,);
+    if(cor.isValid())            //retorna true caso seja uma válida
+    {
+        ui->textEdit->setTextColor(cor);            //altera a cor no textedit
+    }
+    else
+    {
+        QMessageBox::warning(this, "ERRO!", "nenhuma cor foi selecionada!");
+    }
+}
+
+
+void MainWindow::on_actionCor_de_fundo_triggered()          //botão para alterar a cor do fundo do textedit
+{
+    QColor cor = QColorDialog::getColor(Qt::black, this, "Selecione uma cor");            //retorna a cor selecionada na caixa de dialogo. QColorDialog(cor inicial, parent, diálogo,);
+    if(cor.isValid())            //retorna true caso seja uma válida
+    {
+        ui->textEdit->setTextBackgroundColor(cor);            //altera a cor no textedit
+    }
+    else
+    {
+        QMessageBox::warning(this, "ERRO!", "nenhuma cor foi selecionada!");
+    }
 }
 

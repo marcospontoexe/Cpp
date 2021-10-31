@@ -63,8 +63,17 @@
     </property>
     <addaction name="actionBloco_de_anota_es"/>
    </widget>
+   <widget class="QMenu" name="menuFormatar">
+    <property name="title">
+     <string>Formatar</string>
+    </property>
+    <addaction name="actionFonte"/>
+    <addaction name="actionCor"/>
+    <addaction name="actionCor_de_fundo"/>
+   </widget>
    <addaction name="menuArquivo"/>
    <addaction name="menuEditar"/>
+   <addaction name="menuFormatar"/>
    <addaction name="menuSobre"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -189,6 +198,21 @@
    </property>
    <property name="text">
     <string>Bloco de anotações</string>
+   </property>
+  </action>
+  <action name="actionFonte">
+   <property name="text">
+    <string>Fonte</string>
+   </property>
+  </action>
+  <action name="actionCor">
+   <property name="text">
+    <string>Cor da fonte</string>
+   </property>
+  </action>
+  <action name="actionCor_de_fundo">
+   <property name="text">
+    <string>Cor de fundo</string>
    </property>
   </action>
  </widget>
