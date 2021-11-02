@@ -17,7 +17,7 @@ public:
     ~MainWindow();
 
 public slots:
-    void funcaoTempo();     //função
+    void relogio();     //função
 
 private:
     Ui::MainWindow *ui;

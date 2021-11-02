@@ -23,18 +23,18 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     const uint offsetsAndSize[6];
-    char stringdata0[24];
+    char stringdata0[20];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 10), // "MainWindow"
-QT_MOC_LITERAL(11, 11), // "funcaoTempo"
-QT_MOC_LITERAL(23, 0) // ""
+QT_MOC_LITERAL(11, 7), // "relogio"
+QT_MOC_LITERAL(19, 0) // ""
 
     },
-    "MainWindow\0funcaoTempo\0"
+    "MainWindow\0relogio\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,7 +66,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->funcaoTempo(); break;
+        case 0: _t->relogio(); break;
         default: ;
         }
     }
