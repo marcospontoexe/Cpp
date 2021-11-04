@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=mgGwvduicHE&list=PLx4x_zx8csUjczg1qPHavU1vw1IkBcm40&index=139&t=2s&ab_channel=CFBCursos
+
+comandos;
+select * from tb_teste          --mostra todos os registros da tabela 'tb_teste' o
+select * from tb_teste where sexo = "feminino"      --mostra todos os registros da tabela 'tb_teste', com sexo feminin
