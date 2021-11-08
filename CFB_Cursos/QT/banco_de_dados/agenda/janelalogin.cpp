@@ -25,3 +25,12 @@ JanelaLogin::~JanelaLogin()
     delete ui;
 }
 
+
+void JanelaLogin::on_pushButton_log_clicked()               //boão entrar
+{
+    QString nome = ui->lineEdit_log->text();
+    QString senha = ui->lineEdit_senha->text();
+
+
+}
+
