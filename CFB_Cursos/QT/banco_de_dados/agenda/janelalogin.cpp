@@ -39,13 +39,14 @@ void JanelaLogin::on_pushButton_log_clicked()               //boão entrar
     }
 
     QSqlQuery consuta;
-    if(consuta.exec("select * from logs where Log-in = ' " + nome + " ' and Senha = ' " + senha + " ' "))
+    if(consuta.exec("select * from logs where login = '"+nome+"' and senha = '"+senha+"'"))        //se o parametro de entrada obter um retorno válido, a função 'exec()' retorna true
     {
-        ui->textEdit->setText("botaão apertado!");
+
         int cont = 0;
-        while(consuta.next())
+        while(consuta.next())       //'consuta' está recebendo o resutado da função 'exec()'
         {
             cont++;
+            ui->textEdit->setText("botão apertado!");
         }
         if(cont > 0)
         {
