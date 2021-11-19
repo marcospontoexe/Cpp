@@ -21,6 +21,10 @@ public:
 private slots:
     void on_pushButton_log_clicked();
 
+    void on_pushButton_cadastrar_clicked();
+
+    void on_pushButton_pesquisar_clicked();
+
 private:
     Ui::JanelaLogin *ui;
 };

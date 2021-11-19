@@ -1,5 +1,7 @@
 #include "janelalogin.h"
 #include "ui_janelalogin.h"
+#include <QMessageBox>      //classe para caixa de mensagem
+#include "form_pesquisa.h"
 
 static QSqlDatabase bancoDeDados = QSqlDatabase::addDatabase("QSQLITE");      //o objeto 'bancoDeDados' recebe o tipo de banco de dados a ser trabalhado (Sq lite)
 
@@ -63,6 +65,36 @@ void JanelaLogin::on_pushButton_log_clicked()               //boão entrar
             ui->lineEdit_log->setFocus();
         }
     }
+
+}
+
+
+void JanelaLogin::on_pushButton_cadastrar_clicked()         //botão para cadastrar novo login
+{
+    QString mone = ui->lineEdit_nome->text();
+    QString log = ui->lineEdit_log->text();
+    QString senha = ui->lineEdit_senha->text();
+    QSqlQuery adiciona;
+    adiciona.prepare("insert into logs (nome,login,senha) values" "('"+mone+"','"+log+"','"+senha+"')");     //isere valores na tabela 'logs'
+    if(adiciona.exec())        //'adiciona.exec' executa a query 'adiciona.prepare()'
+    {
+        ui->textEdit->setText("Login inserido com sucesso!");
+        ui->lineEdit_nome->clear();
+        ui->lineEdit_log->clear();
+        ui->lineEdit_senha->clear();
+        ui->lineEdit_log->setFocus();
+    }
+    else
+    {
+        QMessageBox::critical(this, "Erro", "exemplo de erro");
+    }
+}
+
+
+void JanelaLogin::on_pushButton_pesquisar_clicked()     //botão para pesquisar na table
+{
+    form_pesquisa pesquisa;
+    pesquisa.exec();        //abre o form 'form_pesquisa'
 
 }
 

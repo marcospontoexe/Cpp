@@ -29,6 +29,7 @@ class Ui_JanelaLogin
 public:
     QWidget *centralwidget;
     QWidget *widget;
+    QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label_log;
@@ -38,6 +39,12 @@ public:
     QLineEdit *lineEdit_senha;
     QPushButton *pushButton_log;
     QTextEdit *textEdit;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *label;
+    QLineEdit *lineEdit_nome;
+    QHBoxLayout *horizontalLayout_3;
+    QPushButton *pushButton_cadastrar;
+    QPushButton *pushButton_pesquisar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -50,10 +57,12 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         widget = new QWidget(centralwidget);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(70, 100, 321, 158));
-        verticalLayout = new QVBoxLayout(widget);
+        widget->setGeometry(QRect(30, 10, 260, 201));
+        verticalLayout_2 = new QVBoxLayout(widget);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         label_log = new QLabel(widget);
@@ -95,6 +104,39 @@ public:
 
         verticalLayout->addWidget(textEdit);
 
+
+        verticalLayout_2->addLayout(verticalLayout);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        label = new QLabel(widget);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        horizontalLayout_4->addWidget(label);
+
+        lineEdit_nome = new QLineEdit(widget);
+        lineEdit_nome->setObjectName(QString::fromUtf8("lineEdit_nome"));
+
+        horizontalLayout_4->addWidget(lineEdit_nome);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_4);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        pushButton_cadastrar = new QPushButton(widget);
+        pushButton_cadastrar->setObjectName(QString::fromUtf8("pushButton_cadastrar"));
+
+        horizontalLayout_3->addWidget(pushButton_cadastrar);
+
+        pushButton_pesquisar = new QPushButton(widget);
+        pushButton_pesquisar->setObjectName(QString::fromUtf8("pushButton_pesquisar"));
+
+        horizontalLayout_3->addWidget(pushButton_pesquisar);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_3);
+
         JanelaLogin->setCentralWidget(centralwidget);
         menubar = new QMenuBar(JanelaLogin);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -115,6 +157,9 @@ public:
         label_log->setText(QCoreApplication::translate("JanelaLogin", "Log-in", nullptr));
         label_2->setText(QCoreApplication::translate("JanelaLogin", "Senha", nullptr));
         pushButton_log->setText(QCoreApplication::translate("JanelaLogin", "Entrar", nullptr));
+        label->setText(QCoreApplication::translate("JanelaLogin", "Nome", nullptr));
+        pushButton_cadastrar->setText(QCoreApplication::translate("JanelaLogin", "Cadastrar", nullptr));
+        pushButton_pesquisar->setText(QCoreApplication::translate("JanelaLogin", "Pesquisar", nullptr));
     } // retranslateUi
 
 };
