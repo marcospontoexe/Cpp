@@ -8,6 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setApplicationName("agenda");         //nome usado na pasta de dados do usuário, onde fica o banco (%APPDATA%/agenda)
     JanelaLogin w;
     w.show();
     return a.exec();
