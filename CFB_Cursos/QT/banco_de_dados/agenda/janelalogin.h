@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QtSql>                    //bibliotaca para banco de dados
-#include <QFileInfo>
 #include "form_principal.h"          //inclusão do outro formulário. A abertura do formulário "form_principal" será abertar a partir deste formulário
 
 QT_BEGIN_NAMESPACE

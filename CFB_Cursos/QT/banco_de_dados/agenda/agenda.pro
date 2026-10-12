@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql network     # 'network' fornece o QPasswordDigestor, usado no hash das senhas
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,12 +12,14 @@ SOURCES += \
     form_pesquisa.cpp \
     form_principal.cpp \
     main.cpp \
-    janelalogin.cpp
+    janelalogin.cpp \
+    senha.cpp
 
 HEADERS += \
     form_pesquisa.h \
     form_principal.h \
-    janelalogin.h
+    janelalogin.h \
+    senha.h
 
 FORMS += \
     form_pesquisa.ui \
